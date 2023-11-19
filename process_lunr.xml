@@ -48,14 +48,6 @@
           token="@@@@@lunr.preview@@@@@"
           value="null"
         />
-        <replace
-          file="${lunr.index.json}"
-          token="/" value="\/"
-        />
-        <replace
-          file="${lunr.preview.json}"
-          token="/" value="\/"
-        />
 
         <move
           file="${lunr.index.json}"
@@ -78,14 +70,6 @@
     -->
     <macrodef name="offline-lunr">
       <sequential>
-        <replace
-          file="${lunr.index.json}"
-          token="/" value="\/"
-        />
-        <replace
-          file="${lunr.preview.json}"
-          token="/" value="\/"
-        />
         <loadfile
           failonerror="true"
           property="lunr.index.placeholder"

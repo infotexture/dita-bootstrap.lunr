@@ -2,7 +2,7 @@
 
 <a href="https://www.dita-ot.org"><img src="https://www.dita-ot.org/images/dita-ot-logo.svg" align="right" height="55"></a>
 
-_DITA Bootstrap Lunr Search_ is a [DITA Open Toolkit plug-in](https://www.dita-ot.org/plugins) that extends the [DITA Bootstrap](https://infotexture.github.io/dita-bootstrap/) HTML output with a [Lunr.js](https://lunrjs.com/) search function.
+_DITA Bootstrap Lunr Search_ is a [DITA Open Toolkit plug-in](https://www.dita-ot.org/plugins) that extends the [DITA Bootstrap](https://dita-bootstrap.github.io/) HTML output with a [Lunr.js](https://lunrjs.com/) search function.
 
 <!-- MarkdownTOC levels="2,3" -->
 
@@ -39,8 +39,8 @@ See the [DITA-OT documentation](https://www.dita-ot.org/4.0/topics/installing-cl
 
 ```console
 dita install https://github.com/jason-fox/fox.jason.extend.css/archive/master.zip
-dita install https://github.com/infotexture/dita-bootstrap/archive/master.zip
-dita install https://github.com/infotexture/dita-bootstrap.lunr/archive/master.zip
+dita install https://github.com/dita-bootstrap/dita-bootstrap/archive/master.zip
+dita install https://github.com/dita-bootstrap/dita-bootstrap.lunr/archive/master.zip
 ```
 
 ### Installing Node.js
@@ -121,7 +121,7 @@ jobs:
 
 ### Parameter Reference
 
-- `offline.mode` - enables Lunr search to work in conjunction with DITA Bootstrap [offline mode](https://infotexture.github.io/dita-bootstrap/offline.html) - this requires an additional plugin to be installed.
+- `offline.mode` - enables Lunr search to work in conjunction with DITA Bootstrap [offline mode](https://dita-bootstrap.github.io/offline.html) - this requires an additional plugin to be installed.
 
 ## License
 

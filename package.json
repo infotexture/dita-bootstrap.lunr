@@ -1,10 +1,10 @@
 {
   "name": "dita-bootstrap.lunr",
   "description": "DITA Open Toolkit plug-in that extends HTML output from the DITA Bootstrap plug-in with a Lunr.js search box",
-  "homepage": "https://github.com/infotexture/dita-bootstrap.lunr",
+  "homepage": "https://github.com/dita-bootstrap/dita-bootstrap.lunr",
   "repository": {
     "type": "git",
-    "url": "https://github.com/infotexture/dita-bootstrap.lunr.git"
+    "url": "https://github.com/dita-bootstrap/dita-bootstrap.lunr.git"
   },
   "license": "Apache-2.0",
   "scripts": {

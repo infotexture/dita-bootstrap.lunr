@@ -11,6 +11,7 @@
     "check": "npm run prettier-check",
     "fmt": "npm run format",
     "format": "prettier --write \"**/*\" --ignore-unknown",
+    "prepare": "lefthook install",
     "prettier": "prettier --write \"**/*\" --ignore-unknown",
     "prettier-check": "prettier --check \"**/*\" --ignore-unknown",
     "test": "prettier --list-different \"**/*\" --ignore-unknown"

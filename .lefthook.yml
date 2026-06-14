@@ -1,10 +1,13 @@
 # Manage Git hooks with Lefthook
-# https://evilmartians.com/chronicles/lefthook-knock-your-teams-code-back-into-shape
-# https://github.com/evilmartians/lefthook/blob/master/docs/configuration.md
+#
+#   Refer for explanation to following link:
+#   https://lefthook.dev/configuration/
+#
 
 pre-commit:
   parallel: true
   commands:
     prettier:
-      run: prettier --write {staged_files} --ignore-unknown
+      glob: '*.{css,dita*,json,md,xml,xsl,yml}'
+      run: prettier --write {staged_files}
       stage_fixed: true

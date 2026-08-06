@@ -28,11 +28,6 @@
       </xsl:choose>
     </xsl:variable>
 
-    <script type="importmap">{
-    "imports": {
-      "bootstrap": "https://corsproxy.io/?https://v6-dev--twbs-bootstrap.netlify.app/docs/6.0/dist/js/bootstrap.bundle.js"
-    }
-  }</script>
     <script type="module" src="{$relpath}/js/lunr-client.js"/>
     <xsl:choose>
       <xsl:when test="$OFFLINE_MODE='yes'">

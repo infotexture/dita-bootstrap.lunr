@@ -26,5 +26,10 @@
       <val>yes</val>
       <val default="true">no</val>
     </param>
+    <param
+      name="bootstrap.css.search.card"
+      type="string"
+      desc="Bootstrap CSS class for search card component"
+    />
   </transtype>
 </plugin>

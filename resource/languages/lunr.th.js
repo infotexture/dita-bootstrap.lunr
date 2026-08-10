@@ -83,6 +83,14 @@
     lunr.th.trimmer = lunr.trimmerSupport.generateTrimmer(lunr.th.wordCharacters);
     lunr.Pipeline.registerFunction(lunr.th.trimmer, 'trimmer-th');
 
+    /* load wordcut if not already attached to lunr (e.g. via a separate <script> tag in the browser) */
+    if ('undefined' === typeof lunr.wordcut) {
+      if (typeof require === 'function') {
+        lunr.wordcut = require('./wordcut');
+      } else {
+        throw new Error('lunr.wordcut is not present. Please include / require wordcut before this script.');
+      }
+    }
     var segmenter = lunr.wordcut;
     segmenter.init();
     lunr.th.tokenizer = function(obj) {

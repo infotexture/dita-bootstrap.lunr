@@ -18,7 +18,7 @@
       value="${dita.plugin.org.dita-bootstrap.lunr.dir}/resource/lunr.js"
     />
 
-    <property name="bootstrap.css.search.card" value=""/>
+    <property name="bootstrap.theme.search.card" value="none"/>
     <property name="is.Bootstrap" value="true"/>
     <condition property="lunr.support.include" value="yes">
       <and>
@@ -223,8 +223,8 @@
     />
     <replace
       file="${dita.output.dir}/js/lunr-client.js"
-      token="@@@bootstrap.css.search.card@@@"
-      value="${bootstrap.css.search.card}"
+      token="@@@bootstrap.theme.search.card@@@"
+      value="${bootstrap.theme.search.card}"
     />
 
     <online-lunr unless:set="offline.mode.yes"/>

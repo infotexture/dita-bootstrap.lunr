@@ -19,7 +19,7 @@
  * export the module via AMD, CommonJS or as a browser global
  * Export code from https://github.com/umdjs/umd/blob/master/returnExports.js
  */
-;
+
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -83,6 +83,14 @@
         }
       }
     };
+    /* load TinySegmenter if not already attached to lunr (e.g. via a separate <script> tag in the browser) */
+    if ('undefined' === typeof lunr.TinySegmenter) {
+      if (typeof require === 'function') {
+        require('./tinyseg')(lunr);
+      } else {
+        throw new Error('lunr.TinySegmenter is not present. Please include / require TinySegmenter before this script.');
+      }
+    }
     var segmenter = new lunr.TinySegmenter(); // インスタンス生成
 
     lunr.ja.tokenizer = function(obj) {

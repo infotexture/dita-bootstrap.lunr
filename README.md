@@ -122,6 +122,7 @@ jobs:
 ### Parameter Reference
 
 - `offline.mode` - enables Lunr search to work in conjunction with DITA Bootstrap [offline mode](https://dita-bootstrap.github.io/offline.html) - this requires an additional plugin to be installed.
+- `bootstrap.theme.search.card` - Bootstrap theme utility class for the search results card component. Accepts a color (`accent`, `danger`, `info`, `inverse`, `primary`, `secondary`, `success`, `warning`) combined with a suffix (`-border`, `-contrast`, `-muted`, `-subtle`, `-subtle-border`), or `none` (default) to disable theming.
 
 ## License
 

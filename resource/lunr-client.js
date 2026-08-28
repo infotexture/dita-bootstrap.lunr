@@ -1,6 +1,19 @@
+// Dialog is loaded from the global bootstrap object
+
 (() => {
   let LUNR_DATA = @@@lunr.index@@@;
   let PREVIEW_LOOKUP = @@@lunr.preview@@@;
+  const SEARCH_CARD_THEME = "@@@bootstrap.theme.search.card@@@";
+
+  function themeClasses(value) {
+    if (!value || value === "none") {
+      return "";
+    }
+    return value
+      .split("-")
+      .map((part) => `theme-${part}`)
+      .join(" ");
+  }
   const scripts = document.getElementsByTagName("script");
   const scriptPath = scripts[scripts.length - 1].src;
   const JSON_PATH = scriptPath.substr(0, scriptPath.lastIndexOf("/") + 1);
@@ -37,9 +50,9 @@
       const title = item["t"];
       const preview = item["d"];
       const link = item["l"];
-      const result = `<div class="card mb-3 search-close">
-        <a class="link stretched-link link-underline link-underline-opacity-0" href="${BASE_URL + link}">
-            <h2 class="h3 title card-header text-body-emphasis">${title}</h5>
+      const result = `<div class="card mb-3 search-close ${themeClasses(SEARCH_CARD_THEME)}">
+        <a class="stretched-link fg-body text-decoration-none" href="${BASE_URL + link}">
+            <h2 class="h3 title card-header">${title}</h5>
         </a>
         <div class="card-body">
           <div class="card-text">
@@ -57,15 +70,15 @@
   }
 
   function formatResults(results) {
-    return `<article role="article">
-        <div class="modal-header justify-content-between">
+    return `<dialog class="dialog-lg dialog dialog-scrollable" id="searchDialog">
+        <div class="dialog-header justify-content-between">
             <h1>@@@lunr.search.results@@@</h1>
-            <button type="button" class="btn-close search-close" aria-label="Close"/>
+            <button type="button" class="btn-close search-close" data-bs-dismiss="dialog" aria-label="Close"/>
         </div>
-        <div class="modal-body">
+        <div class="dialog-body">
       ${parseLunrResults(results)}
       </div>
-      </article>`;
+      </dialog>`;
   }
 
   function escapeHtml(unsafe) {
@@ -80,7 +93,7 @@
   function closeSearch(el) {
     const elements = document.getElementsByClassName("bs-main");
     elements[1].remove();
-    elements[0].classList.remove("collapse");
+    //elements[0].classList.remove("collapse");
     return false;
   }
 
@@ -106,11 +119,21 @@
           elements[1].innerHTML = formatResults(results);
         }
 
-        elements[0].classList.add("collapse");
-        window.scrollTo(0, 0);
+        //elements[0].classList.add("collapse");
+        //window.scrollTo(0, 0);
         const closeBox = document.getElementsByClassName("search-close");
         for(let i = 0; i < closeBox.length; i++) {
            closeBox[i].addEventListener("click", closeSearch);
+        }
+
+        const dialogElement = document.getElementById('searchDialog');
+        if (window.bootstrap?.Dialog) {
+          const dialogInstance = new window.bootstrap.Dialog(dialogElement, {
+            keyboard: false // Optional configuration options
+          });
+          dialogInstance.show();
+        } else {
+          dialogElement.showModal();
         }
         return false;
       })

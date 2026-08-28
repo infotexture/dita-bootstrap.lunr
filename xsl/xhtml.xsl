@@ -28,7 +28,7 @@
       </xsl:choose>
     </xsl:variable>
 
-    <script src="{$relpath}/js/lunr-client.js"/>
+    <script type="module" src="{$relpath}/js/lunr-client.js"/>
     <xsl:choose>
       <xsl:when test="$OFFLINE_MODE='yes'">
         <script src="{$relpath}/js/lunr.js"/>

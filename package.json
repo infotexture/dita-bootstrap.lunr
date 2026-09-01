@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "@prettier/plugin-xml": "3.4.2",
-    "lefthook": "^2.1.10",
+    "lefthook": "^2.1.12",
     "lunr": "^2.3.9",
     "lunr-languages": "^1.20.0",
     "prettier": "3.9.6"
